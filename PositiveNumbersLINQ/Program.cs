@@ -18,9 +18,17 @@ namespace PositiveNumbersLINQ
                            where numbers < 11
                            select numbers;
 
+            var positiveLambda = table.Where(x => x > 0 && x < 11);
+
             foreach (var numbers in positive)
             {
                 Console.WriteLine("{0}", numbers);
+            }
+            Console.WriteLine("Press any key for second verification");
+            Console.ReadKey();
+            foreach (var x in positiveLambda)
+            {
+                Console.WriteLine("{0}", x);
             }
             Console.ReadKey();
         }
